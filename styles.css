@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'HelveticaNowDisplay-Medium';
+    src: url('https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNowDisplayW01-Rg';
+    src: url('https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --font-heading: 'HelveticaNowDisplay-Medium', sans-serif;
+    --font-body: 'HelveticaNowDisplayW01-Rg', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+}
+
+.intro-label {
+    font-size: clamp(18px, 4vw, 26px);
+    line-height: 1.3;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
+/* Hamburger animation states */
+#menu-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+#menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+#menu-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Enable pointer events on interactive children of main */
+main a, main button {
+    pointer-events: auto;
+}
